@@ -9,7 +9,1082 @@
       --ink: #000000;
       --muted: #3b3b3b;
       --line: #e7e7e7;
+      --paper: #ffffff;<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Préparons votre séance coaching</title>
+  <style>
+    :root {
+      --ink: #000000;
+      --muted: #3b3b3b;
+      --line: #e7e7e7;
       --paper: #ffffff;
+      --surface: #ffffff;
+      --pink: #FF1FA9;
+      --blue: #2383B3;
+      --violet: #7D3ABE;
+      --violet-light: #B06DF1;
+      --focus: #2383B3;
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Aaron, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    button, input, textarea { font: inherit; }
+
+    .shell {
+      width: min(1280px, calc(100% - 20px));
+      min-height: 100vh;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+      padding: 28px 0;
+    }
+
+    .brand {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 42px;
+      padding: 10px 0;
+    }
+
+    .brand-mark {
+      width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    h1 {
+      margin: 24px 0 14px;
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.04;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    h1 span {
+      box-shadow: inset 0 -0.2em 0 rgba(255, 31, 169, 0.28);
+    }
+
+    .brand p {
+      max-width: 29ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .trust {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--ink);
+    }
+
+    .trust span::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: var(--violet);
+    }
+
+    main {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 560px;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      align-content: start;
+    }
+
+    .topbar {
+      padding: 14px 18px 0;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 99px;
+      overflow: hidden;
+      background: #edf2f7;
+    }
+
+    .progress div {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--blue);
+      transition: width 240ms ease;
+    }
+
+    .panel {
+      padding: 22px 34px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .eyebrow {
+      margin: 0 0 9px;
+      text-transform: uppercase;
+      color: var(--violet);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: underline;
+      text-decoration-color: var(--pink);
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+    }
+
+    h2 {
+      margin: 0 0 9px;
+      max-width: 100%;
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      color: var(--blue);
+    }
+
+    .hint {
+      margin: 0 0 14px;
+      max-width: 76ch;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      max-width: 680px;
+    }
+
+    .page-fields {
+      display: grid;
+      gap: 12px;
+      max-width: 100%;
+    }
+
+    .question-block {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 100%;
+    }
+
+    .field-item {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field-item.full {
+      grid-column: 1 / -1;
+    }
+
+    .question-hint {
+      margin: -5px 0 1px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    label {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      padding: 15px 16px;
+      color: var(--ink);
+      outline: none;
+      resize: vertical;
+      min-height: 44px;
+    }
+
+    textarea { min-height: 124px; }
+
+    input:focus, textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255, 31, 169, 0.14);
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 100%;
+    }
+
+    .question-tools .choices {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 100%;
+      gap: 8px;
+    }
+
+    .question-tools .choice {
+      min-height: 52px;
+    }
+
+    .question-tools .choice span {
+      padding: 8px 11px;
+    }
+
+    .question-tools,
+    .question-paidTools,
+    .question-aiUses {
+      gap: 6px;
+    }
+
+    .question-paidTools .choices,
+    .question-aiUses .choices {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 100%;
+      gap: 7px;
+    }
+
+    .question-paidTools .choice,
+    .question-aiUses .choice {
+      min-height: 48px;
+    }
+
+    .question-paidTools .choice span,
+    .question-aiUses .choice span {
+      padding: 7px 10px;
+    }
+
+    .choice {
+      position: relative;
+      min-height: 72px;
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .choice span {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 13px 15px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 400;
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      line-height: 1.35;
+    }
+
+    .choice span::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--violet);
+      border-radius: 5px;
+    }
+
+    .choice input[type="radio"] + span::before { border-radius: 99px; }
+
+    .choice:hover span {
+      transform: translateY(-1px);
+      border-color: var(--pink);
+    }
+
+    .choice input:checked + span {
+      border-color: var(--pink);
+      background: rgba(255, 31, 169, 0.08);
+    }
+
+    .choice input:checked + span::before {
+      background: var(--pink);
+      border-color: var(--pink);
+      box-shadow: inset 0 0 0 4px #fff;
+    }
+
+    .question-level {
+      margin-top: -8px;
+    }
+
+    .question-level .choices {
+      gap: 10px;
+    }
+
+    .question-level .choice {
+      min-height: 50px;
+    }
+
+    .question-level .choice span {
+      padding: 8px 12px;
+    }
+
+    .consent {
+      max-width: 760px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .consent-title {
+      margin-bottom: 2px;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .consent label {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      align-items: start;
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.45;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .consent label span {
+      font-weight: 400;
+    }
+
+    .consent strong { color: var(--ink); }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 18px 14px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 6px;
+      padding: 13px 17px;
+      cursor: pointer;
+      font-weight: 800;
+      color: #fff;
+      background: var(--blue);
+      min-width: 116px;
+    }
+
+    .btn:hover { background: var(--violet); }
+
+    .btn.secondary {
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--violet);
+      min-width: auto;
+    }
+
+    .btn.secondary:hover { background: #fff; }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .error {
+      min-height: 20px;
+      color: #b42318;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .result {
+      display: grid;
+      gap: 14px;
+      max-width: 760px;
+    }
+
+    .summary {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .summary p { margin: 0; color: var(--muted); line-height: 1.45; }
+
+    .confirmation-contact {
+      margin-top: 16px;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .confirmation-contact a {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration-color: var(--pink);
+      text-underline-offset: 4px;
+    }
+
+    .confirmation-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .confirmation-list li {
+      display: grid;
+      grid-template-columns: 10px 1fr;
+      gap: 12px;
+      align-items: baseline;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .confirmation-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: var(--pink);
+    }
+
+    .hidden { display: none; }
+
+    @media (max-width: 860px) {
+      .shell {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 24px;
+        padding: 28px 0;
+      }
+
+      .brand {
+        gap: 24px;
+      }
+
+      h1 {
+        max-width: 10ch;
+      }
+
+      main {
+        min-height: 620px;
+      }
+
+      .panel {
+        padding: 34px 24px 24px;
+      }
+
+      .choices {
+        grid-template-columns: 1fr;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .actions {
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="brand">
+      <div>
+        <img class="brand-mark" src="orizia-logo.png" alt="OrizIA">
+        <h1><span>Préparons votre séance coaching</span></h1>
+        <p>Quelques questions pour adapter votre séance à votre niveau, vos outils et vos besoins.</p>
+      </div>
+      <div class="trust">
+        <span>Réponses enregistrées avec consentement</span>
+        <span>Aucune donnée sensible demandée</span>
+      </div>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div class="progress-label">
+          <span id="stepLabel">Etape 1</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+      </div>
+
+      <section class="panel" id="panel"></section>
+
+      <div class="footer">
+        <div class="error" id="error"></div>
+        <div class="actions">
+          <button class="btn secondary" id="backBtn" type="button">Retour</button>
+          <button class="btn" id="nextBtn" type="button">Continuer</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const endpoint = "https://hook.eu1.make.com/w9aprbk5jeoislqwwo3t2dz956ku7lke";
+    const answers = {};
+    let current = 0;
+
+    const steps = [
+      {
+        id: "welcome",
+        type: "page",
+        eyebrow: "Bienvenue",
+        title: "Faisons connaissance.",
+        hint: "Cette séance, c'est la vôtre. Ces quelques questions servent à la construire autour de vous : votre niveau, vos outils, vos vraies questions.\nComptez 3 minutes. Aucun prérequis, aucun jugement. Si vous débutez, c'est exactement le bon moment pour le dire.",
+        questions: [
+          {
+            id: "identityFields",
+            type: "fields",
+            required: ["firstName", "lastName"],
+            fields: [
+              { id: "firstName", label: "Prénom", kind: "text" },
+              { id: "lastName", label: "Nom", kind: "text" },
+              { id: "email", label: "Email", kind: "email", optional: true }
+            ]
+          },
+          {
+            id: "level",
+            type: "single",
+            title: "Comment décririez-vous votre niveau actuel avec l'IA ?",
+            required: true,
+            options: [
+              "Niveau 1 · Débutant·e - J'ai peu ou jamais utilisé d'outils IA",
+              "Niveau 2 · Initié·e - J'utilise quelques outils mais de façon intuitive",
+              "Niveau 3 · Pratiquant·e - Je sais écrire des prompts, j'utilise l'IA au quotidien",
+              "Niveau 4 · Avancé·e - Je maîtrise le prompt engineering et les automatisations"
+            ]
+          }
+        ]
+      },
+      {
+        id: "currentPractice",
+        type: "page",
+        eyebrow: "Pratique actuelle",
+        title: "Vos usages aujourd'hui.",
+        hint: "Cela aide à choisir les bons exemples et à éviter de repartir de trop loin.",
+        questions: [
+          {
+            id: "tools",
+            type: "multi",
+            title: "Quels outils IA utilisez-vous actuellement ?",
+            hint: "Cochez tout ce que vous utilisez, même rarement.",
+            required: true,
+            options: [
+              "Aucun",
+              "GPT",
+              "Claude",
+              "Gemini",
+              "Perplexity",
+              "Copilot",
+              "Canva",
+              "Notion",
+              "Autre"
+            ]
+          },
+          {
+            id: "otherTools",
+            type: "text",
+            title: "Autre outil",
+            required: false,
+            multiline: false,
+            showIf: () => (answers.tools || []).includes("Autre")
+          },
+          {
+            id: "paidTools",
+            type: "multi",
+            title: "Sur lesquels avez-vous un abonnement payant ?",
+            hint: "Optionnel. Cochez uniquement les outils pour lesquels vous avez un compte ou forfait payant.",
+            required: false,
+            options: [
+              "Aucun",
+              "GPT",
+              "Claude",
+              "Gemini",
+              "Perplexity",
+              "Copilot",
+              "Canva",
+              "Notion",
+              "Autre"
+            ],
+            showIf: () => !(answers.tools || []).includes("Aucun")
+          },
+          {
+            id: "aiUses",
+            type: "multi",
+            title: "Pour quoi utilisez-vous l'IA ?",
+            hint: "Si vous débutez, laissez vide, c'est tout à fait normal.",
+            required: false,
+            options: [
+              "Pas encore d'usage régulier",
+              "Rédaction (emails, contenus, posts)",
+              "Recherche & synthèse d'informations",
+              "Création visuelle",
+              "Automatisation de tâches",
+              "Analyse de données / documents",
+              "Traduction",
+              "Formation / apprentissage",
+              "Prospection / marketing",
+              "Autre"
+            ],
+            showIf: () => !(answers.tools || []).includes("Aucun")
+          }
+        ]
+      },
+      {
+        id: "workTogether",
+        type: "page",
+        eyebrow: "Ce qu'on travaille ensemble",
+        title: "Vos priorités de séance.",
+        hint: "Sélectionnez largement : on priorisera ensemble pendant la séance.",
+        questions: [
+          {
+            id: "goals",
+            type: "multi",
+            title: "Sur quoi aimeriez-vous travailler pendant la séance ?",
+            hint: "Sélectionnez tout ce qui vous parle, on priorisera ensemble en séance.",
+            required: true,
+            options: [
+              "Écrire de meilleurs prompts",
+              "Choisir les bons outils IA",
+              "Créer du contenu plus vite",
+              "Analyser des documents ou des données",
+              "Veille et recherche augmentées",
+              "Automatiser des tâches répétitives",
+              "Intégrer l'IA dans mon métier",
+              "IA image, vidéo, audio",
+              "Agents et assistants personnalisés",
+              "Autre sujet"
+            ]
+          },
+          {
+            id: "otherGoal",
+            type: "text",
+            title: "Autre sujet",
+            required: false,
+            multiline: false,
+            showIf: () => (answers.goals || []).includes("Autre sujet")
+          },
+          {
+            id: "expectedOutcome",
+            type: "text",
+            title: "Qu'aimeriez-vous concrètement repartir avec à la fin de la séance ?",
+            hint: "Une compétence, une décision, un livrable précis.",
+            required: true,
+            multiline: true
+          },
+          {
+            id: "mainQuestion",
+            type: "text",
+            title: "Indiquez-nous si vous avez des questions, une problématique particulière ou une préférence à signaler.",
+            hint: "Par exemple : un outil que vous préférez, pas d'outils payants, un budget à respecter, ou tout point dont votre coach devrait tenir compte.",
+            required: false,
+            multiline: true
+          }
+        ]
+      },
+      {
+        id: "context",
+        type: "page",
+        eyebrow: "Contexte",
+        title: "Votre contexte.",
+        hint: "Quelques éléments pour préparer une séance utile et concrète.",
+        questions: [
+          {
+            id: "sharedExample",
+            type: "text",
+            title: "Un lien ou un exemple à partager avec votre coach ?",
+            required: false,
+            multiline: false
+          },
+          {
+            id: "consent",
+            type: "consent",
+            title: "Consentement",
+            required: true
+          }
+        ]
+      },
+      {
+        id: "done",
+        type: "done",
+        eyebrow: "Termine",
+        title: "Merci, c'est bien envoye.",
+        hint: "Vos reponses vont permettre de preparer une session plus adaptee a votre niveau, vos attentes et vos cas concrets."
+      }
+    ];
+
+    function visibleSteps() {
+      return steps.filter(step => !step.showIf || step.showIf());
+    }
+
+    function activeStep() {
+      return visibleSteps()[current];
+    }
+
+    function render() {
+      const flow = visibleSteps();
+      const step = flow[current];
+      const progress = Math.round((current / (flow.length - 1)) * 100);
+      document.getElementById("stepLabel").textContent = step.type === "done" ? "Questionnaire envoyé" : `${step.eyebrow} · page ${current + 1} sur ${flow.length - 1}`;
+      document.getElementById("progressPercent").textContent = `${progress}%`;
+      document.getElementById("progressBar").style.width = `${progress}%`;
+      document.getElementById("backBtn").disabled = current === 0;
+      document.getElementById("backBtn").textContent = "Précédent";
+      document.getElementById("nextBtn").textContent = step.type === "done" ? "" : current === flow.length - 2 ? "Envoyer mes réponses" : "Suivant";
+      document.getElementById("nextBtn").classList.toggle("hidden", step.type === "done");
+      document.getElementById("backBtn").classList.toggle("hidden", step.type === "done");
+      document.getElementById("nextBtn").disabled = false;
+      document.getElementById("error").textContent = "";
+
+      const panel = document.getElementById("panel");
+      panel.innerHTML = `
+        <p class="eyebrow">${step.eyebrow}</p>
+        <h2>${step.title}</h2>
+        <p class="hint">${escapeHtml(step.hint || "").replaceAll("\n", "<br>")}</p>
+        ${renderInput(step)}
+      `;
+
+      document.querySelectorAll('input[name="tools"]').forEach(input => {
+        input.addEventListener("change", () => {
+          saveCurrent();
+          if (input.value === "Aucun" && input.checked) {
+            answers.tools = ["Aucun"];
+            answers.otherTools = "";
+            answers.paidTools = [];
+            answers.aiUses = [];
+          } else if (input.value !== "Aucun" && input.checked) {
+            answers.tools = (answers.tools || []).filter(tool => tool !== "Aucun");
+          }
+          render();
+        });
+      });
+
+      document.querySelectorAll('input[name="paidTools"]').forEach(input => {
+        input.addEventListener("change", () => {
+          saveCurrent();
+          if (input.value === "Aucun" && input.checked) {
+            answers.paidTools = ["Aucun"];
+          } else if (input.value !== "Aucun" && input.checked) {
+            answers.paidTools = (answers.paidTools || []).filter(tool => tool !== "Aucun");
+          }
+          render();
+        });
+      });
+
+      document.querySelectorAll('input[name="goals"]').forEach(input => {
+        input.addEventListener("change", () => {
+          saveCurrent();
+          render();
+        });
+      });
+    }
+
+    function renderInput(step) {
+      if (step.type === "page") {
+        return `<div class="page-fields">${step.questions
+          .filter(question => !question.showIf || question.showIf())
+          .map(renderQuestion)
+          .join("")}</div>`;
+      }
+
+      if (step.type === "done") {
+        return `<div class="result">
+          <div class="summary">
+            <ul class="confirmation-list">
+              <li>Votre profil et vos attentes ont bien été pris en compte.</li>
+              <li>Le coach pourra adapter les exemples, le rythme et les exercices.</li>
+              <li>Si vous avez accepté l'analyse IA, une synthèse pédagogique pourra être préparée en amont.</li>
+            </ul>
+            <p class="confirmation-contact">Vous souhaitez nous préciser autre chose ? Écrivez-nous à <a href="mailto:contact@orizia.fr">contact@orizia.fr</a></p>
+          </div>
+        </div>`;
+      }
+
+      return renderQuestion(step);
+    }
+
+    function renderQuestion(question) {
+      if (question.type === "fields") {
+        return `<div class="question-block question-${question.id} field-grid">${question.fields.map(field => `
+          <div class="field-item ${field.id === "email" ? "full" : ""}">
+            <label for="${field.id}">${field.label}${question.required.includes(field.id) ? " *" : ""}</label>
+            <input id="${field.id}" type="${field.kind}" value="${escapeHtml(answers[field.id] || "")}" autocomplete="on">
+          </div>
+        `).join("")}</div>`;
+      }
+
+      if (question.type === "text") {
+        const value = escapeHtml(answers[question.id] || "");
+        return `<div class="question-block question-${question.id} field">
+          <label for="${question.id}">${question.title}${question.required ? " *" : ""}</label>
+          ${question.hint ? `<p class="question-hint">${question.hint}</p>` : ""}
+          ${question.multiline
+            ? `<textarea id="${question.id}">${value}</textarea>`
+            : `<input id="${question.id}" type="text" value="${value}">`}
+        </div>`;
+      }
+
+      if (question.type === "single" || question.type === "multi") {
+        const selected = answers[question.id] || (question.type === "multi" ? [] : "");
+        return `<div class="question-block question-${question.id}">
+          <label>${question.title}${question.required ? " *" : ""}</label>
+          ${question.hint ? `<p class="question-hint">${question.hint}</p>` : ""}
+          <div class="choices">${question.options.map(option => {
+          const checked = question.type === "multi" ? selected.includes(option) : selected === option;
+          return `<label class="choice">
+            <input type="${question.type === "multi" ? "checkbox" : "radio"}" name="${question.id}" value="${escapeHtml(option)}" ${checked ? "checked" : ""}>
+            <span>${option}</span>
+          </label>`;
+        }).join("")}</div></div>`;
+      }
+
+      if (question.type === "consent") {
+        return `<div class="question-block consent">
+          ${question.title ? `<div class="consent-title">${question.title}${question.required ? " *" : ""}</div>` : ""}
+          <label><input id="consentCollect" type="checkbox" ${answers.consentCollect ? "checked" : ""}><span>J'accepte que mes reponses soient enregistrees afin de preparer, personnaliser et ameliorer la session de formation.</span></label>
+          <label><input id="consentAI" type="checkbox" ${answers.consentAI ? "checked" : ""}><span>J'accepte l'analyse assistee par IA pour produire une synthese pedagogique destinee au coach. Je ne transmets aucune donnee sensible, mot de passe ou information confidentielle.</span></label>
+        </div>`;
+      }
+
+      return "";
+    }
+
+    function saveCurrent() {
+      const step = activeStep();
+
+      if (step.type === "page") {
+        step.questions
+          .filter(question => !question.showIf || question.showIf())
+          .forEach(saveQuestion);
+        return;
+      }
+
+      saveQuestion(step);
+    }
+
+    function saveQuestion(question) {
+      if (question.type === "fields") {
+        question.fields.forEach(field => {
+          answers[field.id] = document.getElementById(field.id).value.trim();
+        });
+      }
+
+      if (question.type === "text") {
+        answers[question.id] = document.getElementById(question.id).value.trim();
+      }
+
+      if (question.type === "single") {
+        const selected = document.querySelector(`input[name="${question.id}"]:checked`);
+        answers[question.id] = selected ? selected.value : "";
+      }
+
+      if (question.type === "multi") {
+        answers[question.id] = Array.from(document.querySelectorAll(`input[name="${question.id}"]:checked`)).map(input => input.value);
+      }
+
+      if (question.type === "consent") {
+        answers.consentCollect = document.getElementById("consentCollect").checked;
+        answers.consentAI = document.getElementById("consentAI").checked;
+      }
+    }
+
+    function validateCurrent() {
+      const step = activeStep();
+      const error = document.getElementById("error");
+
+      if (step.type === "page") {
+        const visibleQuestions = step.questions.filter(question => !question.showIf || question.showIf());
+        return visibleQuestions.every(question => validateQuestion(question, error));
+      }
+
+      return validateQuestion(step, error);
+    }
+
+    function validateQuestion(question, error) {
+      if (question.type === "fields") {
+        const missing = question.required.find(id => !answers[id]);
+        if (missing) {
+          error.textContent = "Merci de completer les champs obligatoires.";
+          return false;
+        }
+        if ((answers.email || "") && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(answers.email || "")) {
+          error.textContent = "Merci de saisir une adresse email valide.";
+          return false;
+        }
+      }
+
+      if (question.required && question.type === "text" && !answers[question.id]) {
+        error.textContent = "Merci de repondre a cette question.";
+        return false;
+      }
+
+      if (question.required && question.type === "single" && !answers[question.id]) {
+        error.textContent = "Merci de choisir une reponse.";
+        return false;
+      }
+
+      if (question.required && question.type === "multi" && (!answers[question.id] || answers[question.id].length === 0)) {
+        error.textContent = "Merci de choisir au moins une reponse.";
+        return false;
+      }
+
+      if (question.type === "consent" && !answers.consentCollect) {
+        error.textContent = "Le consentement a l'enregistrement est obligatoire.";
+        return false;
+      }
+
+      return true;
+    }
+
+    function buildPayload() {
+      return {
+        source: "questionnaire_preparatoire_orizia",
+        submittedAt: new Date().toISOString(),
+        participant: {
+          firstName: answers.firstName || "",
+          lastName: answers.lastName || "",
+          email: answers.email || ""
+        },
+        training: {
+          level: answers.level || "",
+          tools: answers.tools || [],
+          otherTools: answers.otherTools || "",
+          paidTools: answers.paidTools || [],
+          aiUses: answers.aiUses || [],
+          goals: answers.goals || [],
+          otherGoal: answers.otherGoal || "",
+          mainQuestion: answers.mainQuestion || "",
+          expectedOutcome: answers.expectedOutcome || "",
+          sharedExample: answers.sharedExample || ""
+        },
+        consent: {
+          collectAndStore: Boolean(answers.consentCollect),
+          aiAnalysis: Boolean(answers.consentAI)
+        }
+      };
+    }
+
+    async function submitPayload() {
+      const payload = buildPayload();
+      if (!endpoint) return payload;
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw new Error("Erreur d'envoi");
+      return payload;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", async () => {
+      const step = activeStep();
+      if (step.type === "done") {
+        return;
+      }
+
+      saveCurrent();
+      if (!validateCurrent()) return;
+
+      if (visibleSteps()[current + 1]?.type === "done") {
+        try {
+          await submitPayload();
+        } catch (error) {
+          document.getElementById("error").textContent = "L'envoi a echoue. Merci de reessayer dans quelques instants.";
+          return;
+        }
+      }
+
+      current = Math.min(current + 1, visibleSteps().length - 1);
+      render();
+    });
+
+    document.getElementById("backBtn").addEventListener("click", () => {
+      saveCurrent();
+      current = Math.max(current - 1, 0);
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
+
       --surface: #ffffff;
       --pink: #FF1FA9;
       --blue: #2383B3;
